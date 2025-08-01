@@ -43,4 +43,33 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     },
   });
+
+  // Image slider for hero section. Cycle through AI illustrations to add motion.
+  const heroImg = document.querySelector('.hero-image img');
+  // Define the list of images used in the hero slider. These AI-themed
+  // illustrations rotate every few seconds to give the page a sense of
+  // motion and dynamism. The filenames correspond to assets stored in
+  // the repository root; if you add or remove images here be sure to
+  // update this array accordingly. Note that hero2.jpg is retained as
+  // a fallback image.
+  const images = [
+    'illustration1.jpg',
+    'illustration2.jpg',
+    'illustration3.jpg',
+    'ai1.jpg',
+    'ai2.jpg',
+    'ai3.jpg',
+    'hero2.jpg',
+  ];
+  let imgIndex = 0;
+  setInterval(() => {
+    // fade out
+    heroImg.classList.add('fade-out');
+    setTimeout(() => {
+      imgIndex = (imgIndex + 1) % images.length;
+      heroImg.src = images[imgIndex];
+      // fade in
+      heroImg.classList.remove('fade-out');
+    }, 500);
+  }, 7000);
 });
