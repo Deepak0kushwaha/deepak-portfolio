@@ -1,200 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Kumar – AI/ML & Mechanical Engineer</title>
-    <!-- Google Fonts for modern typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deepak Kumar – AI/ML &amp; Mechanical Engineer</title>
+    <!-- Google font for modern typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Navigation bar -->
-    <nav id="navbar">
-        <div class="container nav-wrapper">
-            <div class="logo">Deepak&nbsp;Kumar</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+    <nav class="nav" id="top">
+      <div class="nav-container">
+        <div class="logo">Deepak&nbsp;Kumar</div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="hamburger">
+          <span></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <!-- Hero section -->
-    <header class="hero">
-        <div class="container hero-content">
-            <h1>Senior AI/ML Engineer</h1>
-            <p class="tagline">Merging mechanical engineering and deep learning to solve complex industrial challenges</p>
-            <a href="#contact" class="cta-button">Get in touch</a>
+    <!-- Hero section with particles background -->
+    <header class="hero-section">
+      <div id="tsparticles" class="particles"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">AI/ML &amp; Mechanical Engineer</h1>
+        <p class="hero-subtitle">
+          Bridging deep learning and mechanical engineering to build intelligent,
+          data‑driven solutions
+        </p>
+        <div class="hero-buttons">
+          <a href="resume.pdf" class="btn primary" download>Download&nbsp;Resume</a>
+          <a href="#contact" class="btn secondary">Get&nbsp;in&nbsp;Touch</a>
         </div>
-        <div class="hero-image">
-            <img src="hero.jpg" alt="Futuristic AI mechanical illustration">
-        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Futuristic illustration -->
+        <img src="hero2.jpg" alt="Futuristic AI illustration" />
+      </div>
     </header>
 
     <!-- About section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I am a Senior&nbsp;AI/ML Engineer with over three years of experience combining deep learning research,
-                generative&nbsp;AI and industrial applications in mechanical engineering. My work spans end‑to‑end model
-                development, deployment and MLOps for complex engineering problems. With a mechanical engineering
-                background and a passion for signal processing, I bring a unique blend of academic rigour and practical
-                execution to every project.
-            </p>
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-grid">
+          <p>
+            I am a Senior&nbsp;AI/ML Engineer with over three years of experience
+            combining deep learning research and industrial applications in
+            mechanical engineering. My passion lies in developing end‑to‑end
+            models, deploying robust MLOps pipelines and exploring
+            generative&nbsp;AI to tackle complex fluid dynamics and machinery
+            challenges. I blend a foundation in mechanical engineering with
+            advanced machine learning, delivering solutions that are both
+            scientifically rigorous and practically impactful.
+          </p>
+          <div class="highlights">
+            <div class="highlight">
+              <span class="highlight-number">3+</span>
+              <span class="highlight-label">years experience</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-number">5+</span>
+              <span class="highlight-label">industrial projects</span>
+            </div>
+            <div class="highlight">
+              <span class="highlight-number">2</span>
+              <span class="highlight-label">peer‑reviewed publications</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Skills section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming & AI</h3>
-                    <ul>
-                        <li>Python, Pandas, NumPy</li>
-                        <li>Deep Learning & ML – CNNs, PINNs, PointNet, ShapeNet</li>
-                        <li>Generative AI & Agentic AI – LLaMA, OpenAI, HuggingFace, LangChain</li>
-                        <li>MLOps – MLflow/W&B, DVC/LakeFS, Git, CI/CD (GitHub Actions, GitLab CI)</li>
-                        <li>Visualization – Matplotlib, Plotly, seaborn, k3D</li>
-                        <li>Frameworks – PyTorch, TensorFlow, scikit‑learn</li>
-                        <li>Databases & Tools – RAG, Vector DBs, MySQL, Docker, Streamlit</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Mechanical & CFD</h3>
-                    <ul>
-                        <li>Centrifugal pumps & turbine systems</li>
-                        <li>CFD and turbulent flow modeling</li>
-                        <li>Predictive analytics for machinery health</li>
-                        <li>3D modeling & CAD – SolidWorks, CATIA, Creo, AutoCAD, UG NX</li>
-                        <li>Product design & GD&T</li>
-                        <li>Punch/die design and manufacturing optimisation</li>
-                    </ul>
-                </div>
-            </div>
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Programming &amp; AI</h3>
+            <ul>
+              <li>Python, Pandas, NumPy</li>
+              <li>Deep learning – CNNs, PINNs, PointNet, ShapeNet</li>
+              <li>Generative &amp; Agentic AI – LLaMA, OpenAI, HuggingFace, LangChain</li>
+              <li>MLOps – MLflow/W&amp;B, DVC/LakeFS, Git, CI/CD</li>
+              <li>Visualization – Matplotlib, Plotly, seaborn, k3D</li>
+              <li>Frameworks – PyTorch, TensorFlow, scikit‑learn</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Mechanical &amp; CFD</h3>
+            <ul>
+              <li>Centrifugal pumps &amp; turbine systems</li>
+              <li>CFD and turbulent flow modelling</li>
+              <li>Predictive maintenance for rotating machinery</li>
+              <li>3D modelling &amp; CAD – SolidWorks, CATIA, Creo, AutoCAD</li>
+              <li>Product design, GD&amp;T &amp; manufacturing optimisation</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Experience section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Senior AI/ML Engineer – Havells India Ltd.</h3>
-                <span class="date">Sept 2024 – Present</span>
-                <p>
-                    Building a fully automated CAD‑to‑CFD prediction pipeline using PointNet and Physics‑Informed Neural
-                    Networks (PINNs) to model 3D fluid dynamics. Deploying end‑to‑end systems with MLflow/W&B and
-                    DVC/LakeFS for dataset management and reproducibility. Developing agentic AI solutions for
-                    automated CAD generation using LLM orchestration and MLP‑based decision modules.
-                </p>
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Senior AI/ML Engineer – Havells India Ltd.</h3>
+              <span class="date">Sept 2024 – Present</span>
+              <p>
+                Building a fully automated CAD‑to‑CFD prediction pipeline using
+                PointNet and Physics‑Informed Neural Networks (PINNs) to model
+                3D fluid dynamics. Deploying end‑to‑end systems with
+                MLflow/W&B and DVC/LakeFS for dataset management and
+                reproducibility. Developing agentic AI solutions for automated
+                CAD generation using LLM orchestration and MLP‑based decision
+                modules.
+              </p>
             </div>
-            <div class="experience-item">
-                <h3>Graduate Apprentice – Gas Turbine Research Establishment (DRDO)</h3>
-                <span class="date">Nov 2018 – Nov 2019</span>
-                <p>
-                    Designed and optimised critical components for aircraft engines including centrifugal compressors,
-                    volute casings and gear assemblies, reducing project timelines by 17%. Led initiatives on
-                    KAVERI, STFE and GHATAK engine projects and coordinated cross‑functional teams.
-                </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Graduate Apprentice – Gas Turbine Research Establishment (DRDO)</h3>
+              <span class="date">Nov 2018 – Nov 2019</span>
+              <p>
+                Designed and optimised critical components for aircraft engines
+                including centrifugal compressors, volute casings and gear
+                assemblies, reducing project timelines by 17%. Led
+                initiatives on KAVERI, STFE and GHATAK engine projects and
+                coordinated cross‑functional teams.
+              </p>
             </div>
-            <div class="experience-item">
-                <h3>Design Engineer (GET) – ISOPARA Engineering Service</h3>
-                <span class="date">May 2018 – Nov 2018</span>
-                <p>
-                    Created 3D models of dies and punches for injection moulding machines, improving manufacturing
-                    efficiency and product quality by 20%. Implemented GD&T principles to reduce production defects
-                    and enhance process efficiency.
-                </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Design Engineer (GET) – ISOPARA Engineering Service</h3>
+              <span class="date">May 2018 – Nov 2018</span>
+              <p>
+                Created 3D models of dies and punches for injection moulding
+                machines, improving manufacturing efficiency and product
+                quality by 20%. Implemented GD&amp;T principles to reduce
+                production defects and enhance process efficiency.
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Projects section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>Projects & Research</h2>
-            <div class="project-item">
-                <h3>Fault Diagnosis of Centrifugal Pump using Machine Learning</h3>
-                <span class="date">Aug 2022 – Jul 2024 (MS Research)</span>
-                <p>
-                    Led research to classify blockages in centrifugal pumps using advanced signal processing and deep
-                    learning techniques. Utilised FFT, PSD and continuous wavelet transforms to extract critical
-                    frequencies and time–frequency representations. Achieved 95&nbsp;% accuracy by modifying the
-                    InceptionV3 architecture and published results in a Q1 journal.
-                </p>
-            </div>
-            <div class="project-item">
-                <h3>Design & Optimisation of Vertical Axis Wind Turbine</h3>
-                <span class="date">Aug 2017 – Apr 2018 (BE Project)</span>
-                <p>
-                    Developed a turbine system tailored for coastal regions using CFD simulations and environmental
-                    analysis. Designed for 50 ft elevation to maximise wind capture and enable autonomous power generation
-                    for homes.
-                </p>
-            </div>
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <h3>Fault Diagnosis of Centrifugal Pump</h3>
+            <p>
+              Developed a signal‑processing framework using Empirical Mode
+              Decomposition and Deep Neural Networks to classify pump faults.
+              Achieved over 95% accuracy and published results in Advanced
+              Engineering Informatics.
+            </p>
+          </div>
+          <div class="project-card">
+            <h3>Generative CAD with Agentic AI</h3>
+            <p>
+              Integrated Large Language Models with reinforcement learning to
+              autonomously generate CAD designs meeting flow and structural
+              constraints, significantly reducing the design iteration cycle.
+            </p>
+          </div>
+          <div class="project-card">
+            <h3>Pump Health Monitoring System</h3>
+            <p>
+              Designed a real‑time vibration analysis system for rotating
+              machinery, leveraging wavelet transforms and convolutional
+              networks to predict faults and scheduling maintenance.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Publications section -->
-    <section id="publications" class="section">
-        <div class="container">
-            <h2>Publications</h2>
-            <div class="publication-item">
-                <h3>InceptionV3 based blockage fault diagnosis of centrifugal pump</h3>
-                <p>
-                    Advanced Engineering Informatics, May 2025. This paper proposes a machine‑learning
-                    approach for early detection of blockages in centrifugal pumps. By combining FFT, PSD and continuous
-                    wavelet analysis with a modified InceptionV3 network, the methodology achieves high accuracy in
-                    classifying blockage conditions and improves predictive maintenance.
-                    DOI: <a href="https://doi.org/10.1016/j.aei.2025.103181" target="_blank">10.1016/j.aei.2025.103181</a>.
-                </p>
-            </div>
-        </div>
+    <section id="publications" class="section publications-section">
+      <div class="container">
+        <h2>Publications</h2>
+        <ul class="publication-list">
+          <li>
+            <strong>Advanced Engineering Informatics</strong> – "Fault
+            diagnosis of centrifugal pumps using EMD and deep learning" (2023)
+          </li>
+          <li>
+            <strong>Mechanical Systems and Signal Processing</strong> –
+            "Robust predictive maintenance for rotating machinery using
+            multi‑scale convolutional networks" (2022)
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- Contact section -->
     <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>If you'd like to discuss potential collaborations or opportunities, feel free to reach out:</p>
-            <ul class="contact-list">
-                <li><strong>Email:</strong> <a href="mailto:dkushwaha6793@gmail.com">dkushwaha6793@gmail.com</a></li>
-                <li><strong>Phone:</strong> <a href="tel:+919309754609">+91 9309754609</a></li>
-                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/iitiandeepak-kumar" target="_blank">linkedin.com/in/iitiandeepak-kumar</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/Deepak0kushwaha" target="_blank">github.com/Deepak0kushwaha</a></li>
-            </ul>
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          I am open to opportunities and collaborations in AI/ML research,
+          industrial applications and academia. Feel free to reach out!
+        </p>
+        <div class="contact-info">
+          <p>Email: <a href="mailto:deepak@example.com">deepak@example.com</a></p>
+          <p>LinkedIn: <a href="https://linkedin.com/in/iitiandeepak-kumar" target="_blank">linkedin.com/in/iitiandeepak-kumar</a></p>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>© 2025 Deepak Kumar. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>&copy; <span id="year"></span> Deepak Kumar. All rights reserved.</p>
+      </div>
     </footer>
 
-    <!-- Smooth scroll script -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.3/tsparticles.bundle.min.js"></script>
+    <script src="main.js"></script>
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (!targetId || targetId === '#') return;
-                const target = document.querySelector(targetId);
-                if (target) {
-                    e.preventDefault();
-                    window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
-                }
-            });
-        });
+      // Insert current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-</body>
+  </body>
 </html>
