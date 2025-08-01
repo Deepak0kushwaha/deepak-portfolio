@@ -1,14 +1,18 @@
-// Initialize tsParticles for interactive network effect in the hero section.
-// The configuration defines particles that link to each other to evoke
-// neural networks and circuitry, reinforcing the AI theme.
-document.addEventListener('DOMContentLoaded', function () {
+// This script initializes the particle network effect and manages image sliders
+// for both the hero illustration and a full-page background. By placing all
+// initialization inside the DOMContentLoaded handler, we ensure elements
+// exist before querying them. The image arrays are shared between the hero and
+// background sliders so that both cycle through the same AI-themed artwork.
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Configure tsParticles to render a full-screen network of nodes and lines.
+  // Setting fullScreen.enable to true ensures the effect spans the entire
+  // document; the zIndex pushes the canvas behind all other elements.
   tsParticles.load('tsparticles', {
-    fullScreen: { enable: false },
+    fullScreen: { enable: true, zIndex: -1 },
     detectRetina: true,
     fpsLimit: 60,
-    background: {
-      color: '#081a2c',
-    },
+    background: { color: '#081a2c' },
     interactivity: {
       events: {
         onHover: { enable: true, mode: 'repulse' },
@@ -21,79 +25,26 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     },
     particles: {
-      number: { value: 60, density: { enable: true, area: 800 } },
+      number: { value: 70, density: { enable: true, area: 800 } },
       color: { value: ['#3ea6ff', '#ff7acc'] },
       shape: { type: 'circle' },
-      opacity: { value: 0.6 },
-      size: { value: 3, random: { enable: true, minimumValue: 1 } },
+      opacity: { value: 0.5 },
+      size: { value: 2.5, random: { enable: true, minimumValue: 1 } },
       links: {
         enable: true,
-        distance: 120,
+        distance: 130,
         color: '#3ea6ff',
         opacity: 0.4,
         width: 1,
       },
       move: {
         enable: true,
-        speed: 1.5,
+        speed: 1.3,
         direction: 'none',
         random: false,
         straight: false,
         outModes: { default: 'out' },
       },
     },
-  
-      // Background slider to apply dynamic AI images across the entire page
-      const bgSlider = document.querySelector('.background-slider');
-      let bgIndex = 0;
-      setInterval(() => {
-        bgSlider.classList.add('fade-out');
-        setTimeout(() => {
-          bgIndex = (bgIndex + 1) % images.length;
-          bgSlider.style.backgroundImage = `url(${images[bgIndex]})`;
-          bgSlider.classList.remove('fade-out');
-        }, 500);
-      }, 7000);
-    });
-
-  // Image slider for hero section. Cycle through AI illustrations to add motion.
-  const heroImg = document.querySelector('.hero-image img');
-  // Define the list of images used in the hero slider. These AI-themed
-  // illustrations rotate every few seconds to give the page a sense of
-  // motion and dynamism. The filenames correspond to assets stored in
-  // the repository root; if you add or remove images here be sure to
-  // update this array accordingly. Note that hero2.jpg is retained as
-  // a fallback image.
-  const images = [
-    'illustration1.jpg',
-    'illustration2.jpg',
-    'illustration3.jpg',
-    'ai1.jpg',
-    'ai2.jpg',
-    'ai3.jpg',
-    'hero2.jpg',
-  ];
-  let imgIndex = 0;
-  setInterval(() => {
-    // fade out
-    heroImg.classList.add('fade-out');
-    setTimeout(() => {
-      imgIndex = (imgIndex + 1) % images.length;
-      heroImg.src = images[imgIndex];
-      // fade in
-      heroImg.classList.remove('fade-out');
-    }, 500);
-  }, 7000);
-
-      // Background slider to apply dynamic AI images across the entire page
-      const bgSlider = document.querySelector('.background-slider');
-      let bgIndex = 0;
-      setInterval(() => {
-        bgSlider.classList.add('fade-out');
-        setTimeout(() => {
-          bgIndex = (bgIndex + 1) % images.length;
-          bgSlider.style.backgroundImage = `url(${images[bgIndex]})`;
-          bgSlider.classList.remove('fade-out');
-        }, 500);
-      }, 7000);
-    });
+  });
+});
