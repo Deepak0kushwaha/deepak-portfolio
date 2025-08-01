@@ -208,6 +208,12 @@ body {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 8px 20px var(--shadow);
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Fade-out class for hero image slider */
+.hero-image img.fade-out {
+  opacity: 0;
 }
 @media (max-width: 768px) {
   .hero-section {
@@ -451,4 +457,9 @@ body {
   text-align: center;
   color: var(--text-muted);
   border-top: 1px solid var(--border-colour);
+}
+/* Fade-out class for hero image slider */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
