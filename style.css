@@ -188,6 +188,24 @@ body {
   display: flex;
   gap: 1rem;
 }
+
+/* Profile photo in hero section */
+/*
+ * Profile photo styling
+ * Increase the default width so that the image fills the left column
+ * of the hero section more completely. Maintain a modest border radius
+ * for a clean, modern look. The `object-fit` property ensures the image
+ * scales nicely without distortion, and a subtle box shadow adds
+ * depth against the dark background.
+ */
+.profile-photo {
+  width: 280px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
 .btn {
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
