@@ -42,7 +42,19 @@ document.addEventListener('DOMContentLoaded', function () {
         outModes: { default: 'out' },
       },
     },
-  });
+  
+      // Background slider to apply dynamic AI images across the entire page
+      const bgSlider = document.querySelector('.background-slider');
+      let bgIndex = 0;
+      setInterval(() => {
+        bgSlider.classList.add('fade-out');
+        setTimeout(() => {
+          bgIndex = (bgIndex + 1) % images.length;
+          bgSlider.style.backgroundImage = `url(${images[bgIndex]})`;
+          bgSlider.classList.remove('fade-out');
+        }, 500);
+      }, 7000);
+    });
 
   // Image slider for hero section. Cycle through AI illustrations to add motion.
   const heroImg = document.querySelector('.hero-image img');
@@ -72,4 +84,16 @@ document.addEventListener('DOMContentLoaded', function () {
       heroImg.classList.remove('fade-out');
     }, 500);
   }, 7000);
-});
+
+      // Background slider to apply dynamic AI images across the entire page
+      const bgSlider = document.querySelector('.background-slider');
+      let bgIndex = 0;
+      setInterval(() => {
+        bgSlider.classList.add('fade-out');
+        setTimeout(() => {
+          bgIndex = (bgIndex + 1) % images.length;
+          bgSlider.style.backgroundImage = `url(${images[bgIndex]})`;
+          bgSlider.classList.remove('fade-out');
+        }, 500);
+      }, 7000);
+    });
