@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deepak Kumar – Senior AI/ML Engineer</title>
+    <title>Deepak Kumar – AI/ML &amp; Mechanical Engineer</title>
     <!-- Use system fonts for a smooth, professional look. Styling is controlled via CSS variables. -->
     <link rel="stylesheet" href="style.css" />
     </head>
@@ -13,7 +13,7 @@
     <!-- Navigation bar -->
     <nav class="nav" id="top">
       <div class="nav-container">
-        <div class="logo">DEEPAK&nbsp;KUMAR</div>
+        <div class="logo">Deepak&nbsp;Kumar</div>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" />
         <label for="nav-toggle" class="hamburger">
           <span></span>
@@ -34,11 +34,11 @@
       <div id="tsparticles" class="particles"></div>
       <div class="hero-content">
         <!-- Profile photo on the left side of the hero.  A rounded rectangle image helps personalise the page. -->
-        <img src="mypic.jpg" alt="Profile photo" class="profile-photo" />
-        <h1 class="hero-title">Senior Engineer - AI/ML</h1>
+        <img src="profile.jpg" alt="Profile photo" class="profile-photo" />
+        <h1 class="hero-title">AI/ML &amp; Mechanical Engineer</h1>
         <p class="hero-subtitle">
-          Bridging AI and Physics to build intelligent,
-          data‑driven Agentic AI solutions in core of Mechanical engineering field.
+          Bridging deep learning and mechanical engineering to build intelligent,
+          data‑driven solutions
         </p>
         <div class="hero-buttons">
           <a href="resume.pdf" class="btn primary" download>Download&nbsp;Resume</a>
@@ -60,10 +60,10 @@
             I am a Senior&nbsp;AI/ML Engineer with over three years of experience
             combining deep learning research and industrial applications in
             mechanical engineering. My passion lies in developing end‑to‑end
-            models, neural network architecture development, deploying robust MLOps pipelines and exploring
-            generative&nbsp;AI to tackle complex Physics like fluid dynamics, structural, thermal and machinery
+            models, deploying robust MLOps pipelines and exploring
+            generative&nbsp;AI to tackle complex fluid dynamics and machinery
             challenges. I blend a foundation in mechanical engineering with
-            advanced machine learning and signal processing, delivering solutions that are both
+            advanced machine learning, delivering solutions that are both
             scientifically rigorous and practically impactful.
           </p>
           <div class="highlights">
@@ -174,8 +174,10 @@
           <div class="project-card">
             <h3>Fault Diagnosis of Centrifugal Pump</h3>
             <p>
-              Developed a signal‑processing framework using continuous wavelet transforms and Deep Neural Networks to classify pump faults.
-              Achieved over 95% accuracy and published results in Advanced Engineering Informatics journal.
+              Developed a signal‑processing framework using Empirical Mode
+              Decomposition and Deep Neural Networks to classify pump faults.
+              Achieved over 95% accuracy and published results in Advanced
+              Engineering Informatics.
             </p>
           </div>
           <div class="project-card">
@@ -187,11 +189,123 @@
             </p>
           </div>
           <div class="project-card">
-            <h3>Flow field Prediction</h3>
+            <h3>Pump Health Monitoring System</h3>
             <p>
-              Designed a pipeline based on architecture like PointNet/transformers/PINNs/GNN
-              to predict velocities and pressure flow field simimlar to CFD simulation.
+              Designed a real‑time vibration analysis system for rotating
+              machinery, leveraging wavelet transforms and convolutional
+              networks to predict faults and scheduling maintenance.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Freelance Projects section -->
+    <section id="freelance" class="section freelance-section">
+      <div class="container">
+        <h2>Freelance Projects</h2>
+        <!-- Each freelance project is presented in its own card.  The
+             descriptions include a summary, role, technical stack and
+             impact for clarity.  -->
+        <div class="freelance-list">
+          <!-- Project 1 -->
+          <div class="freelance-card">
+            <h3>Language‑Agnostic Speaker Identification, Verification, Diarization, Transcription &amp; Translation System</h3>
+            <p><strong>Summary:</strong> Built an end‑to‑end multilingual audio intelligence pipeline that identifies and verifies speakers, segments conversations (diarization), transcribes speech, and translates across languages and dialects—designed for noisy, real‑world environments (e.g., transportation/operational settings).</p>
+            <p><strong>Role &amp; Responsibilities:</strong> Lead architect and implementer of the full‑stack audio AI solution.</p>
+            <p><strong>Technical Approach / Stack:</strong></p>
+            <ul>
+              <li>Signal processing: frequency analysis to extract harmonics and dominant components, overlap detection, and noise profiling.</li>
+              <li>Voice Activity Detection (VAD) to isolate speech segments.</li>
+              <li>WhisperX (or equivalent) for high‑fidelity speech‑to‑text transcription.</li>
+              <li>Diarization using <code>pynote</code> to separate and label speakers.</li>
+              <li>Speaker identification &amp; verification logic across languages (language‑agnostic embeddings / similarity metrics).</li>
+              <li>REST API backend delivering structured transcripts, speaker labels, timestamps, and translations to UI dashboards.</li>
+            </ul>
+            <p><strong>Impact:</strong> Enabled scalable, accurate extraction of actionable communication data from large noisy audio corpora, reducing manual review overhead and improving situational awareness in safety‑critical workflows.</p>
+          </div>
+          <!-- Project 2 -->
+          <div class="freelance-card">
+            <h3>Retrieval‑Augmented Generation (RAG) Based Question &amp; Answering / Knowledge Correlation System</h3>
+            <p><strong>Summary:</strong> Developed a semantic retrieval and generative reasoning platform that ingests heterogeneous documents, correlates information, and answers user queries with context‑aware summaries using RAG techniques.</p>
+            <p><strong>Role &amp; Responsibilities:</strong> Designed and implemented the full RAG pipeline, including vector store management, prompt orchestration and answer synthesis.</p>
+            <p><strong>Technical Approach / Stack:</strong></p>
+            <ul>
+              <li>Large language models (e.g., open‑source Llama‑70B) as the generative core.</li>
+              <li>ChromaDB for vector embedding storage and similarity search.</li>
+              <li>Custom document ingestion, chunking and embedding pipelines.</li>
+              <li>Retrieval logic to fetch relevant context, followed by prompt assembly for the generator.</li>
+              <li>Answer refinement and attribution layers to improve factuality.</li>
+            </ul>
+            <p><strong>Impact:</strong> Delivered a knowledge assistant capable of synthesizing cross‑document insights, accelerating research synthesis and decision support in domain‑specific contexts.</p>
+          </div>
+          <!-- Project 3 -->
+          <div class="freelance-card">
+            <h3>Agentic LLM Integration in Blender for Industrial‑Grade CAD Generation</h3>
+            <p><strong>Summary:</strong> Extended Blender with an agentic, retrieval‑augmented LLM interface to translate natural language prompts into parametrically generated, industrial‑grade CAD models with iterative refinement.</p>
+            <p><strong>Role &amp; Responsibilities:</strong> Creator of the multi‑agent RAG orchestration layer, prompt engineering framework and Blender integration.</p>
+            <p><strong>Technical Approach / Stack:</strong></p>
+            <ul>
+              <li>LLM backend (e.g., ChatGPT‑4o‑mini or comparable) orchestrated via agentic pipelines.</li>
+              <li>Retrieval agents to fetch relevant API/docs/context, RAG prompt constructor and execution agent generating Blender Python scripts.</li>
+              <li>Prompt engineering for precise geometry specification and adaptive iteration.</li>
+              <li>Blender Python addon customization for real‑time model generation and feedback loop.</li>
+            </ul>
+            <p><strong>Impact:</strong> Enabled non‑expert engineers/designers to generate and evolve CAD models through conversational interfaces, significantly reducing early‑stage design friction.</p>
+          </div>
+          <!-- Project 4 -->
+          <div class="freelance-card">
+            <h3>Website Development Using AI‑Enabled “Vibe Coding” Tools</h3>
+            <p><strong>Summary:</strong> Built modern web interfaces leveraging AI‑assisted coding tools to accelerate front‑end development.</p>
+            <p><strong>Role &amp; Responsibilities:</strong> Designed, prototyped and deployed portfolio/product websites using emerging “vibe coding” platforms.</p>
+            <p><strong>Technical Approach / Stack:</strong></p>
+            <ul>
+              <li>Tools: cursor.ai, windsurf (or equivalent AI‑assisted code generation/UX prototyping).</li>
+              <li>Rapid iteration: prompt‑driven UI/UX synthesis, component customization and deployment‑ready scaffolds.</li>
+              <li>Integration of branding/content with automated generation.</li>
+            </ul>
+            <p><strong>Impact:</strong> Reduced traditional front‑end development time by leveraging AI tooling, delivering polished web experiences with minimal boilerplate.</p>
+          </div>
+          <!-- Project 5 -->
+          <div class="freelance-card">
+            <h3>Cross‑Platform Task Management App (Flutter)</h3>
+            <p><strong>Summary:</strong> Developed a lightweight, cross‑platform To‑Do application to help users organize and track tasks.</p>
+            <p><strong>Role &amp; Responsibilities:</strong> End‑to‑end app developer from UI/UX to state management and persistence.</p>
+            <p><strong>Technical Approach / Stack:</strong></p>
+            <ul>
+              <li>Flutter for cross‑platform mobile/desktop UI.</li>
+              <li>Local storage (e.g., SQLite/shared preferences) for task persistence.</li>
+              <li>Reactive state management for dynamic updates.</li>
+            </ul>
+            <p><strong>Impact:</strong> Provided users with a responsive, portable productivity tool tailored for personal workflow management.</p>
+          </div>
+          <!-- Project 6 -->
+          <div class="freelance-card">
+            <h3>Agentic AI for Financial Modeling &amp; Stock Market Analysis</h3>
+            <p><strong>Summary:</strong> Built an intelligent agent framework to automate financial data ingestion, modeling and insight generation for stock market analysis.</p>
+            <p><strong>Role &amp; Responsibilities:</strong> Architected the agentic decision pipeline and implemented model‑driven financial reasoning.</p>
+            <p><strong>Technical Approach / Stack:</strong></p>
+            <ul>
+              <li>Data pipelines for market data collection and normalization.</li>
+              <li>Predictive modeling using time‑series architectures (e.g., LSTM/transformers).</li>
+              <li>Agentic orchestration to trigger analyses, generate narrative summaries, and surface anomalies/trends.</li>
+              <li>Integration of domain heuristics with learned models for hybrid insight.</li>
+            </ul>
+            <p><strong>Impact:</strong> Enabled semi‑autonomous monitoring and early‑warning signals for financial decision‑making, reducing manual analysis latency.</p>
+          </div>
+          <!-- Project 7 -->
+          <div class="freelance-card">
+            <h3>AI Agent for Content &amp; Image Generation for Content Creators</h3>
+            <p><strong>Summary:</strong> Created an AI assistant that supplies writers and bloggers with contextual content drafts and corresponding visual assets on demand.</p>
+            <p><strong>Role &amp; Responsibilities:</strong> Designed the prompt/response orchestration and content generation workflow.</p>
+            <p><strong>Technical Approach / Stack:</strong></p>
+            <ul>
+              <li>LLMs for content generation (titles, body copy, SEO‑aware summaries).</li>
+              <li>Image generation or retrieval layers (via prompt‑to‑image or curated asset pipelines).</li>
+              <li>Context conditioning based on topic, audience and tone.</li>
+              <li>Lightweight UI or API endpoint to serve content creators in real time.</li>
+            </ul>
+            <p><strong>Impact:</strong> Streamlined content production, enabling faster publishing cycles with consistent quality and reduced ideation friction.</p>
           </div>
         </div>
       </div>
