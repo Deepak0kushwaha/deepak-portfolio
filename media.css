@@ -8,9 +8,15 @@
 
 /* Container that centres the media and navigation on the page */
 .media-container {
+  /* Set a maximum width and centre the carousel horizontally.  A
+     small left padding adds breathing room between the edge of the
+     page and the content without affecting the overall width (see
+     box-sizing below). */
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  padding-left: 20px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
