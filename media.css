@@ -15,7 +15,12 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  /* Add symmetric left and right padding to provide breathing
+     room on both sides without altering overall width.  The
+     box-sizing property ensures the padding is included in the
+     element's total width. */
   padding-left: 20px;
+  padding-right: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
