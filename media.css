@@ -22,8 +22,8 @@
   /* Provide 20px of space on the left and right so the container
      never touches the page edges.  Vertical margins are left at
      their default values. */
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
   /* Use border-box to ensure any future padding or borders are
      included in the element’s width. */
   box-sizing: border-box;
