@@ -1,12 +1,18 @@
-// Modified main.js to include dynamic media display
-// This script initializes the tsParticles effect and rotates through media
-// files stored in the `media` folder of this repository. It fetches the
-// list of files from the GitHub API at runtime and cycles through
-// supported formats (images, videos, GIFs). Unsupported formats are
-// presented as download links.
+// Dynamic media display script with fixed window and Prev/Next controls.
+
+/**
+ * This script initialises the tsParticles background and manages a
+ * carousel of images, videos and other media stored in the `media`
+ * folder.  The media are displayed inside a fixed‑size container
+ * (see media.css for styling).  Both “Prev” and “Next” buttons are
+ * always visible, allowing the user to navigate through the
+ * collection.  Images advance automatically after a short delay
+ * unless the user hovers over the container.
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize tsParticles for the animated background
+  // Initialise the animated particle background.  These settings are
+  // unchanged from the original implementation.
   tsParticles.load('tsparticles', {
     fullScreen: { enable: true, zIndex: -1 },
     detectRetina: true,
@@ -47,12 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  // Inject the dynamic media container if it doesn't already exist.
-  // Some portfolio pages may still include a static `.hero-image` element with a
-  // hard‑coded `<img>` tag. To avoid editing HTML manually, we locate that
-  // container, create a new `<div id="media-container" class="media-container">`
-  // and replace the static hero image with our dynamic container. If the
-  // `media-container` already exists, we simply reuse it.
+  // Locate an existing media container or convert the static hero image
+  // into a dynamic media container.  This allows the script to be
+  // retro‑fitted onto the existing page without editing HTML.
   let container = document.getElementById('media-container');
   if (!container) {
     const heroDiv = document.querySelector('.hero-image');
@@ -63,39 +66,41 @@ document.addEventListener('DOMContentLoaded', () => {
       heroDiv.parentNode.replaceChild(container, heroDiv);
     }
   }
-  // If we still couldn't find or create the container, we cannot proceed.
+  // Abort if there is still no place to mount the carousel.
   if (!container) return;
 
-  // Dynamically append the media.css stylesheet so the carousel has its
-  // own styling without requiring changes to index.html. This ensures
-  // the next button and media container are styled properly.
+  // Append the dedicated stylesheet for the carousel.  Doing this
+  // dynamically ensures that the portfolio loads correctly even if the
+  // developer forgets to add media.css to the HTML.
   const cssLink = document.createElement('link');
   cssLink.rel = 'stylesheet';
   cssLink.href = 'media.css';
   document.head.appendChild(cssLink);
 
-  // Dynamic media loader with hover and playback controls
+  // Create navigation controls.  Prev and Next buttons are always
+  // visible so users can navigate through all media types.  The
+  // buttons are appended before any media is shown.
+  const prevBtn = document.createElement('button');
+  prevBtn.textContent = 'Prev';
+  prevBtn.classList.add('media-prev-btn');
+  container.appendChild(prevBtn);
 
-  // Create a next button for manually advancing through non‑image content
   const nextBtn = document.createElement('button');
   nextBtn.textContent = 'Next';
-  nextBtn.style.display = 'none';
   nextBtn.classList.add('media-next-btn');
-  nextBtn.addEventListener('click', () => {
-    advanceMedia();
-  });
   container.appendChild(nextBtn);
 
+  // Media state tracking variables
   let mediaFiles = [];
   let currentIndex = 0;
   let hoverPaused = false;
   let timerId;
 
+  // Helper to schedule automatic advancement for images.
   function scheduleNext() {
     clearTimeout(timerId);
     const current = mediaFiles[currentIndex];
     if (!current) return;
-    // Only auto‑advance for images when not hovered
     if (isImage(current) && !hoverPaused) {
       timerId = setTimeout(() => {
         advanceMedia();
@@ -103,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Media type helper functions
   function isImage(media) {
     return ['jpg', 'jpeg', 'png', 'webp'].includes(media.type);
   }
@@ -113,31 +119,29 @@ document.addEventListener('DOMContentLoaded', () => {
     return ['mp4', 'webm'].includes(media.type);
   }
   function requiresManualAdvance(media) {
-    // GIFs and PPTs (if supported in future) require manual advance
-    // Video ends trigger auto advance on ended event
     return isGif(media) || (!isVideo(media) && !isImage(media));
   }
 
+  /**
+   * Render the currently selected media.  Existing media elements are
+   * removed, but navigation buttons remain.  Depending on the file
+   * type, an <img>, <video> or <a> tag is constructed and inserted
+   * before the Prev button so that buttons stay at the bottom.
+   */
   function showMedia() {
-    // Clear existing content except the next button
+    // Remove everything except the navigation controls
     const toRemove = Array.from(container.children).filter(
-      (el) => el !== nextBtn
+      (el) => el !== nextBtn && el !== prevBtn
     );
     toRemove.forEach((el) => el.remove());
     const current = mediaFiles[currentIndex];
     if (!current) return;
-    const { url, type, name } = current;
-    nextBtn.style.display = 'none';
-    // For images and GIFs use img tag
+    const { url, name } = current;
     if (isImage(current) || isGif(current)) {
       const img = document.createElement('img');
       img.src = url;
       img.alt = name;
-      container.insertBefore(img, nextBtn);
-      if (isGif(current) || requiresManualAdvance(current)) {
-        // GIFs stay until manually advanced
-        nextBtn.style.display = 'inline-block';
-      }
+      container.insertBefore(img, prevBtn);
     } else if (isVideo(current)) {
       const video = document.createElement('video');
       video.src = url;
@@ -148,27 +152,35 @@ document.addEventListener('DOMContentLoaded', () => {
       video.onended = () => {
         advanceMedia();
       };
-      container.insertBefore(video, nextBtn);
-      nextBtn.style.display = 'inline-block';
+      container.insertBefore(video, prevBtn);
     } else {
-      // Unsupported types: provide a link and manual advance
       const link = document.createElement('a');
       link.href = url;
       link.textContent = name;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      container.insertBefore(link, nextBtn);
-      nextBtn.style.display = 'inline-block';
+      container.insertBefore(link, prevBtn);
     }
     scheduleNext();
   }
 
+  // Advance to the next media item
   function advanceMedia() {
     currentIndex = (currentIndex + 1) % mediaFiles.length;
     showMedia();
   }
 
-  // Hover behaviour: pause rotation on hover, resume on leave
+  // Navigate to the previous media item
+  function rewindMedia() {
+    currentIndex = (currentIndex - 1 + mediaFiles.length) % mediaFiles.length;
+    showMedia();
+  }
+
+  // Attach click handlers to the navigation buttons
+  prevBtn.addEventListener('click', rewindMedia);
+  nextBtn.addEventListener('click', advanceMedia);
+
+  // Hover behaviour: pause auto‑advance while the user hovers
   container.addEventListener('mouseenter', () => {
     hoverPaused = true;
     clearTimeout(timerId);
@@ -178,7 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
     scheduleNext();
   });
 
-  // Fetch list of media files from GitHub
+  // Fetch the list of media files from the GitHub repository.  Only
+  // supported formats are retained.  Once loaded, the first media is
+  // displayed.
   fetch(
     'https://api.github.com/repos/Deepak0kushwaha/deepak-portfolio/contents/media'
   )

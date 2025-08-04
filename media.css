@@ -1,22 +1,46 @@
-/* Additional styling for the dynamic media container */
+/* Additional styling for the dynamic media container with fixed window size */
+
+/*
+  The portfolio carousel displays images, videos and other media
+  inside a fixed‑size window.  The container below enforces a
+  consistent aspect ratio and centres the media.  Media that are
+  larger than the window will be scaled down to fit, while
+  smaller media will remain at their natural size without being
+  stretched.  Navigation buttons appear below the media and are
+  styled consistently for both “Prev” and “Next” controls.
+*/
 #media-container {
   width: 100%;
-  padding: 2rem;
+  max-width: 600px;
+  height: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
+
+/* Images and videos should never overflow the container.  They
+   maintain their aspect ratio thanks to max‑width and max‑height.
+   The object-fit property ensures that oversized media are scaled
+   down, while smaller media retain their native dimensions. */
 #media-container img,
 #media-container video {
   display: block;
-  width: 100%;
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 8px 20px var(--shadow);
 }
 
-/* Styles for the manual 'Next' button.  The button appears when
-   content requires manual advancement (videos, GIFs, presentations). */
-.media-next-btn {
+/* Styles shared by both navigation buttons.  The buttons are
+   displayed horizontally with a small gap. */
+.media-next-btn,
+.media-prev-btn {
   margin-top: 0.5rem;
+  margin-right: 0.5rem;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
@@ -26,6 +50,10 @@
   font-weight: bold;
   box-shadow: 0 2px 6px var(--shadow);
 }
-.media-next-btn:hover {
+
+/* Hover state for both buttons.  The secondary colour provides
+   visual feedback when the user hovers over either control. */
+.media-next-btn:hover,
+.media-prev-btn:hover {
   background-color: var(--secondary);
 }
