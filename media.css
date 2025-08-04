@@ -14,7 +14,11 @@
      box-sizing below). */
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
+  /* Provide explicit horizontal margins so that the carousel does
+     not touch the edges of the webpage.  This sets a 20px gap
+     on both the left and right sides of the container. */
+  margin-left: 20px;
+  margin-right: 20px;
   /* Add symmetric left and right padding to provide breathing
      room on both sides without altering overall width.  The
      box-sizing property ensures the padding is included in the
