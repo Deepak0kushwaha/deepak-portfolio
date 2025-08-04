@@ -47,9 +47,34 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  // Dynamic media loader with hover and playback controls
-  const container = document.getElementById('media-container');
+  // Inject the dynamic media container if it doesn't already exist.
+  // Some portfolio pages may still include a static `.hero-image` element with a
+  // hard‑coded `<img>` tag. To avoid editing HTML manually, we locate that
+  // container, create a new `<div id="media-container" class="media-container">`
+  // and replace the static hero image with our dynamic container. If the
+  // `media-container` already exists, we simply reuse it.
+  let container = document.getElementById('media-container');
+  if (!container) {
+    const heroDiv = document.querySelector('.hero-image');
+    if (heroDiv) {
+      container = document.createElement('div');
+      container.id = 'media-container';
+      container.className = 'media-container';
+      heroDiv.parentNode.replaceChild(container, heroDiv);
+    }
+  }
+  // If we still couldn't find or create the container, we cannot proceed.
   if (!container) return;
+
+  // Dynamically append the media.css stylesheet so the carousel has its
+  // own styling without requiring changes to index.html. This ensures
+  // the next button and media container are styled properly.
+  const cssLink = document.createElement('link');
+  cssLink.rel = 'stylesheet';
+  cssLink.href = 'media.css';
+  document.head.appendChild(cssLink);
+
+  // Dynamic media loader with hover and playback controls
 
   // Create a next button for manually advancing through non‑image content
   const nextBtn = document.createElement('button');
