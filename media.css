@@ -1,59 +1,134 @@
-/* Additional styling for the dynamic media container with fixed window size */
+/* Styling for the dynamic media carousel
+ *
+ * This stylesheet defines a fixed window for displaying images,
+ * videos and other media files while providing a smooth sliding
+ * transition when navigating between items.  The navigation
+ * buttons are positioned below the window and always visible.
+ */
 
-/*
-  The portfolio carousel displays images, videos and other media
-  inside a fixed‑size window.  The container below enforces a
-  consistent aspect ratio and centres the media.  Media that are
-  larger than the window will be scaled down to fit, while
-  smaller media will remain at their natural size without being
-  stretched.  Navigation buttons appear below the media and are
-  styled consistently for both “Prev” and “Next” controls.
-*/
-#media-container {
+/* Container that centres the media and navigation on the page */
+.media-container {
   width: 100%;
   max-width: 600px;
-  height: 400px;
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 
-/* Images and videos should never overflow the container.  They
-   maintain their aspect ratio thanks to max‑width and max‑height.
-   The object-fit property ensures that oversized media are scaled
-   down, while smaller media retain their native dimensions. */
-#media-container img,
-#media-container video {
-  display: block;
+/* Window where media are shown.  It has a fixed height and
+   hides overflow so that sliding transitions occur within its
+   bounds.  The background colour provides a subtle contrast */
+.media-window {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(8, 26, 44, 0.2);
+  border-radius: 8px;
+}
+
+/* Each media item (image, video or link) fills the window and
+   scales down to fit while maintaining aspect ratio.  Items are
+   positioned absolutely so that they can slide over one another. */
+.media-window .media-item {
   max-width: 100%;
   max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px var(--shadow);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-/* Styles shared by both navigation buttons.  The buttons are
-   displayed horizontally with a small gap. */
-.media-next-btn,
-.media-prev-btn {
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-  padding: 0.5rem 1rem;
+/* Navigation bar below the window */
+.media-nav {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Style for the Prev and Next buttons */
+.media-prev-btn,
+.media-next-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #3ea6ff;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: var(--primary);
-  color: #081a2c;
-  font-weight: bold;
-  box-shadow: 0 2px 6px var(--shadow);
+  transition: background-color 0.3s ease;
 }
 
-/* Hover state for both buttons.  The secondary colour provides
-   visual feedback when the user hovers over either control. */
-.media-next-btn:hover,
-.media-prev-btn:hover {
-  background-color: var(--secondary);
+.media-prev-btn:hover,
+.media-next-btn:hover {
+  background-color: #2c82c9;
+}
+
+/* Keyframes for sliding animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Classes applied by the JavaScript to animate media sliding */
+.slide-in-right {
+  animation: slideInRight 0.6s ease forwards;
+}
+
+.slide-out-left {
+  animation: slideOutLeft 0.6s ease forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.6s ease forwards;
 }

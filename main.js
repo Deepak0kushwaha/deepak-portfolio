@@ -77,18 +77,32 @@ document.addEventListener('DOMContentLoaded', () => {
   cssLink.href = 'media.css';
   document.head.appendChild(cssLink);
 
-  // Create navigation controls.  Prev and Next buttons are always
-  // visible so users can navigate through all media types.  The
-  // buttons are appended before any media is shown.
+  // Create a dedicated media window and a separate navigation bar.
+  // The media window holds the currently displayed media and handles
+  // slide animations.  Navigation buttons sit below the window in
+  // their own container so that layout remains consistent across
+  // different media types.  See media.css for sizing.
+  const mediaWindow = document.createElement('div');
+  mediaWindow.className = 'media-window';
+  container.appendChild(mediaWindow);
+
+  const navDiv = document.createElement('div');
+  navDiv.className = 'media-nav';
+  container.appendChild(navDiv);
+
+  // Create navigation controls.  Both Prev and Next buttons are
+  // appended into the navigation bar.  They remain visible at
+  // all times, allowing the user to move backwards or forwards
+  // through the carousel.
   const prevBtn = document.createElement('button');
   prevBtn.textContent = 'Prev';
   prevBtn.classList.add('media-prev-btn');
-  container.appendChild(prevBtn);
+  navDiv.appendChild(prevBtn);
 
   const nextBtn = document.createElement('button');
   nextBtn.textContent = 'Next';
   nextBtn.classList.add('media-next-btn');
-  container.appendChild(nextBtn);
+  navDiv.appendChild(nextBtn);
 
   // Media state tracking variables
   let mediaFiles = [];
@@ -123,57 +137,90 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * Render the currently selected media.  Existing media elements are
-   * removed, but navigation buttons remain.  Depending on the file
-   * type, an <img>, <video> or <a> tag is constructed and inserted
-   * before the Prev button so that buttons stay at the bottom.
+   * Render the currently selected media into the mediaWindow.  When
+   * transitioning from one item to another, a sliding animation is
+   * applied.  The direction parameter determines whether the new
+   * item slides in from the right (for next) or from the left (for
+   * previous).  Existing media items are removed once the
+   * transition completes.
+   *
+   * @param {('next'|'prev')} direction The direction to animate
+   *   the transition. Defaults to 'next' if omitted.
    */
-  function showMedia() {
-    // Remove everything except the navigation controls
-    const toRemove = Array.from(container.children).filter(
-      (el) => el !== nextBtn && el !== prevBtn
-    );
-    toRemove.forEach((el) => el.remove());
-    const current = mediaFiles[currentIndex];
-    if (!current) return;
-    const { url, name } = current;
-    if (isImage(current) || isGif(current)) {
-      const img = document.createElement('img');
-      img.src = url;
-      img.alt = name;
-      container.insertBefore(img, prevBtn);
-    } else if (isVideo(current)) {
-      const video = document.createElement('video');
-      video.src = url;
-      video.autoplay = true;
-      video.muted = true;
-      video.controls = true;
-      video.loop = false;
-      video.onended = () => {
+  function showMedia(direction = 'next') {
+    const currentMedia = mediaFiles[currentIndex];
+    if (!currentMedia) return;
+
+    // Build a new element based on the media type.
+    let newEl;
+    const { url, name } = currentMedia;
+    if (isImage(currentMedia) || isGif(currentMedia)) {
+      newEl = document.createElement('img');
+      newEl.src = url;
+      newEl.alt = name;
+    } else if (isVideo(currentMedia)) {
+      newEl = document.createElement('video');
+      newEl.src = url;
+      newEl.autoplay = true;
+      newEl.muted = true;
+      newEl.controls = true;
+      newEl.loop = false;
+      newEl.onended = () => {
         advanceMedia();
       };
-      container.insertBefore(video, prevBtn);
     } else {
-      const link = document.createElement('a');
-      link.href = url;
-      link.textContent = name;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      container.insertBefore(link, prevBtn);
+      newEl = document.createElement('a');
+      newEl.href = url;
+      newEl.textContent = name;
+      newEl.target = '_blank';
+      newEl.rel = 'noopener noreferrer';
     }
+    newEl.classList.add('media-item');
+
+    // Determine animation classes based on direction.  Incoming
+    // element slides in from the appropriate side; outgoing element
+    // slides out the opposite way.
+    const inClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
+    const outClass = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
+
+    const currentEl = mediaWindow.querySelector('.media-item');
+    if (!currentEl) {
+      // Initial load: no animation needed.
+      mediaWindow.innerHTML = '';
+      mediaWindow.appendChild(newEl);
+      scheduleNext();
+      return;
+    }
+
+    // Prepare new element for sliding.
+    newEl.classList.add(inClass);
+    mediaWindow.appendChild(newEl);
+    // Apply outgoing class to current element.
+    currentEl.classList.add(outClass);
+
+    // Once the animation ends, remove the old element and clean up
+    // classes on the new element.
+    function onAnimationEnd() {
+      currentEl.remove();
+      newEl.classList.remove(inClass);
+      newEl.removeEventListener('animationend', onAnimationEnd);
+    }
+    newEl.addEventListener('animationend', onAnimationEnd);
     scheduleNext();
   }
 
-  // Advance to the next media item
+  // Advance to the next media item.  Pass the direction so the
+  // sliding animation moves from right to left.
   function advanceMedia() {
     currentIndex = (currentIndex + 1) % mediaFiles.length;
-    showMedia();
+    showMedia('next');
   }
 
-  // Navigate to the previous media item
+  // Navigate to the previous media item.  Sliding animation moves
+  // from left to right.
   function rewindMedia() {
     currentIndex = (currentIndex - 1 + mediaFiles.length) % mediaFiles.length;
-    showMedia();
+    showMedia('prev');
   }
 
   // Attach click handlers to the navigation buttons
