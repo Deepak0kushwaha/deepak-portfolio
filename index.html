@@ -213,118 +213,59 @@
       </div>
     </section>
 
-    <!-- Freelance Projects section -->
+        <!-- Freelance Projects section -->
     <section id="freelance" class="section freelance-section">
       <div class="container">
         <h2>Freelance Projects</h2>
-        <!-- Each freelance project is presented in its own card.  The
-             descriptions include a summary, role, technical stack and
-             impact for clarity.  -->
         <div class="freelance-list">
-          <!-- Project 1 -->
           <div class="freelance-card">
-            <h3>Language‑Agnostic Speaker Identification, Verification, Diarization, Transcription &amp; Translation System</h3>
-            <p><strong>Summary:</strong> Built an end‑to‑end multilingual audio intelligence pipeline that identifies and verifies speakers, segments conversations (diarization), transcribes speech, and translates across languages and dialects—designed for noisy, real‑world environments (e.g., transportation/operational settings).</p>
-            <p><a href = "https://github.com/Deepak0kushwaha/speaker_ai" class="btn secondary"> <strong> Click here for Github Repository</strong></a></p>
-            <p><strong>Technical Approach / Stack:</strong></p>
-            <ul>
-              <li>Signal processing: frequency analysis to extract harmonics and dominant components, overlap detection, and noise profiling.</li>
-              <li>Voice Activity Detection (VAD) to isolate speech segments.</li>
-              <li>WhisperX (or equivalent) for high‑fidelity speech‑to‑text transcription.</li>
-              <li>Diarization using <code>pynote</code> to separate and label speakers.</li>
-              <li>Speaker identification &amp; verification logic across languages (language‑agnostic embeddings / similarity metrics).</li>
-              <li>REST API backend delivering structured transcripts, speaker labels, timestamps, and translations to UI dashboards.</li>
-            </ul>
-            <p><strong>Impact:</strong> Enabled scalable, accurate extraction of actionable communication data from large noisy audio corpora, reducing manual review overhead and improving situational awareness in safety‑critical workflows.</p>
+            <h3>Language‑Agnostic Speaker Identification, Verification, Diarization, Transcription & Translation System</h3>
+            <p>A multilingual audio pipeline that automatically identifies and verifies speakers, segments conversations, transcribes speech and translates across languages. It uses advanced signal processing, VAD, diarization and speaker embeddings to deliver timestamped transcripts even in noisy environments, dramatically reducing manual review.</p>
+            <p><a href="https://github.com/Deepak0kushwaha/speaker_ai" class="btn secondary">View on GitHub</a></p>
           </div>
-          <!-- Project 2 -->
           <div class="freelance-card">
-            <h3>Retrieval‑Augmented Generation (RAG) Based Question &amp; Answering / Knowledge Correlation System</h3>
-            <p><strong>Summary:</strong> Developed a semantic retrieval and generative reasoning platform that ingests heterogeneous documents, correlates information, and answers user queries with context‑aware summaries using RAG techniques.</p>
-            <p><a href = "https://github.com/Deepak0kushwaha/rag_qa_system" class="btn secondary"> <strong> Click here for Github Repository</strong></a></p>
-            <p><strong>Technical Approach / Stack:</strong></p>
-            <ul>
-              <li>Large language models (e.g., open‑source Llama‑70B) as the generative core.</li>
-              <li>ChromaDB for vector embedding storage and similarity search.</li>
-              <li>Custom document ingestion, chunking and embedding pipelines.</li>
-              <li>Retrieval logic to fetch relevant context, followed by prompt assembly for the generator.</li>
-              <li>Answer refinement and attribution layers to improve factuality.</li>
-            </ul>
-            <p><strong>Impact:</strong> Delivered a knowledge assistant capable of synthesizing cross‑document insights, accelerating research synthesis and decision support in domain‑specific contexts.</p>
+            <h3>Retrieval‑Augmented Generation (RAG) Q&A/Knowledge Correlation System</h3>
+            <p>A semantic retrieval‑augmented generation platform that ingests heterogeneous documents, retrieves relevant context using vector embeddings and generates concise, context‑aware answers. It synthesises cross‑document insights to accelerate research synthesis and decision support.</p>
+            <p><a href="https://github.com/Deepak0kushwaha/rag_qa_system" class="btn secondary">View on GitHub</a></p>
           </div>
-          <!-- Project 3 -->
           <div class="freelance-card">
             <h3>Agentic LLM Integration in Blender for Industrial‑Grade CAD Generation</h3>
-            <p><strong>Summary:</strong> Extended Blender with an agentic, retrieval‑augmented LLM interface to translate natural language prompts into parametrically generated, industrial‑grade CAD models with iterative refinement.</p>
-            <p><a href = "https://github.com/Deepak0kushwaha/blender_agentic_cad" class="btn secondary"> <strong> Click here for Github Repository</strong></a></p>
-            <p><strong>Technical Approach / Stack:</strong></p>
-            <ul>
-              <li>LLM backend (e.g., ChatGPT‑4o‑mini or comparable) orchestrated via agentic pipelines.</li>
-              <li>Retrieval agents to fetch relevant API/docs/context, RAG prompt constructor and execution agent generating Blender Python scripts.</li>
-              <li>Prompt engineering for precise geometry specification and adaptive iteration.</li>
-              <li>Blender Python addon customization for real‑time model generation and feedback loop.</li>
-            </ul>
-            <p><strong>Impact:</strong> Enabled non‑expert engineers/designers to generate and evolve CAD models through conversational interfaces, significantly reducing early‑stage design friction.</p>
+            <p>An agentic interface inside Blender that translates natural language prompts into parametrically generated CAD models. Retrieval‑augmented prompts and iterative refinement allow engineers to rapidly generate and evolve designs, reducing early‑stage iteration time.</p>
+            <p><a href="https://github.com/Deepak0kushwaha/blender_agentic_cad" class="btn secondary">View on GitHub</a></p>
           </div>
-          <!-- Project 4 -->
           <div class="freelance-card">
-            <h3>Website Development Using AI‑Enabled “Vibe Coding” Tools</h3>
-            <p><strong>Summary:</strong> Built modern web interfaces leveraging AI‑assisted coding tools to accelerate front‑end development.</p>
-            <p><a href = "https://github.com/Deepak0kushwaha/ai_vibe_web" class="btn secondary"> <strong> Click here for Github Repository</strong></a></p>
-            <p><strong>Technical Approach / Stack:</strong></p>
-            <ul>
-              <li>Tools: cursor.ai, windsurf (or equivalent AI‑assisted code generation/UX prototyping).</li>
-              <li>Rapid iteration: prompt‑driven UI/UX synthesis, component customization and deployment‑ready scaffolds.</li>
-              <li>Integration of branding/content with automated generation.</li>
-            </ul>
-            <p><strong>Impact:</strong> Reduced traditional front‑end development time by leveraging AI tooling, delivering polished web experiences with minimal boilerplate.</p>
+            <h3>Website Development Using AI‑Enabled Vibe Coding Tools</h3>
+            <p>Developed modern web interfaces using AI‑assisted coding tools that speed up front‑end prototyping. Prompt‑driven UI generation and automated component scaffolding deliver polished web experiences quickly, cutting down development cycles.</p>
+            <p><a href="https://github.com/Deepak0kushwaha/ai_vibe_web" class="btn secondary">View on GitHub</a></p>
           </div>
-          <!-- Project 5 -->
           <div class="freelance-card">
             <h3>Cross‑Platform Task Management App (Flutter)</h3>
-            <p><strong>Summary:</strong> Developed a lightweight, cross‑platform To‑Do application to help users organize and track tasks.</p>
-            <p><a href = "https://github.com/Deepak0kushwaha/flutter_task_manager" class="btn secondary"> <strong> Click here for Github Repository</strong></a></p>
-            <p><strong>Technical Approach / Stack:</strong></p>
-            <ul>
-              <li>Flutter for cross‑platform mobile/desktop UI.</li>
-              <li>Local storage (e.g., SQLite/shared preferences) for task persistence.</li>
-              <li>Reactive state management for dynamic updates.</li>
-            </ul>
-            <p><strong>Impact:</strong> Provided users with a responsive, portable productivity tool tailored for personal workflow management.</p>
+            <p>A lightweight task management app built with Flutter that lets users organise and track to‑dos across platforms. It features a responsive UI, local persistence and reactive state management for seamless task handling on any device.</p>
+            <p><a href="https://github.com/Deepak0kushwaha/flutter_task_manager" class="btn secondary">View on GitHub</a></p>
           </div>
-          <!-- Project 6 -->
           <div class="freelance-card">
-            <h3>Agentic AI for Financial Modeling &amp; Stock Market Analysis</h3>
-            <p><strong>Summary:</strong> Built an intelligent agent framework to automate financial data ingestion, modeling and insight generation for stock market analysis.</p>
-            <p><a href = " https://github.com/Deepak0kushwaha/agentic_financial_modeling" class="btn secondary"> <strong> Click here for Github Repository</strong></a></p>
-            <p><strong>Technical Approach / Stack:</strong></p>
-            <ul>
-              <li>Data pipelines for market data collection and normalization.</li>
-              <li>Predictive modeling using time‑series architectures (e.g., LSTM/transformers).</li>
-              <li>Agentic orchestration to trigger analyses, generate narrative summaries, and surface anomalies/trends.</li>
-              <li>Integration of domain heuristics with learned models for hybrid insight.</li>
-            </ul>
-            <p><strong>Impact:</strong> Enabled semi‑autonomous monitoring and early‑warning signals for financial decision‑making, reducing manual analysis latency.</p>
+            <h3>Agentic AI for Financial Modeling & Stock Market Analysis</h3>
+            <p>An agentic AI framework that automates financial data collection, time‑series modelling and narrative generation. It orchestrates analyses to detect anomalies and trends, providing early‑warning insights for investors while reducing manual effort.</p>
+            <p><a href="https://github.com/Deepak0kushwaha/agentic_financial_modeling" class="btn secondary">View on GitHub</a></p>
           </div>
-          <!-- Project 7 -->
           <div class="freelance-card">
-            <h3>AI Agent for Content &amp; Image Generation for Content Creators</h3>
-            <p><strong>Summary:</strong> Created an AI assistant that supplies writers and bloggers with contextual content drafts and corresponding visual assets on demand.</p>
-            <p><a href = "https://github.com/Deepak0kushwaha/content_image_ai_agent" class="btn secondary"> <strong> Click here for Github Repository</strong></a></p>
-            <p><strong>Technical Approach / Stack:</strong></p>
-            <ul>
-              <li>LLMs for content generation (titles, body copy, SEO‑aware summaries).</li>
-              <li>Image generation or retrieval layers (via prompt‑to‑image or curated asset pipelines).</li>
-              <li>Context conditioning based on topic, audience and tone.</li>
-              <li>Lightweight UI or API endpoint to serve content creators in real time.</li>
-            </ul>
-            <p><strong>Impact:</strong> Streamlined content production, enabling faster publishing cycles with consistent quality and reduced ideation friction.</p>
+            <h3>AI Agent for Content & Image Generation for Content Creators</h3>
+            <p>An AI assistant that produces contextual text drafts and matching images on demand. It combines language models with image generation pipelines to streamline content creation for bloggers and writers, speeding up publishing cycles.</p>
+            <p><a href="https://github.com/Deepak0kushwaha/content_image_ai_agent" class="btn secondary">View on GitHub</a></p>
+          </div>
+          <div class="freelance-card">
+            <h3>ML‑Based CAD‑to‑CFD Pipeline</h3>
+            <p>A fully automated pipeline that converts CAD models into CFD predictions using point‑cloud networks and physics‑informed neural networks. It manages preprocessing, inference and visualisation, offers an interactive front‑end for real‑time flow prediction, and tracks experiments via DVC, MLflow and CI/CD.</p>
+            <p><a href="https://github.com/Deepak0kushwaha/ml_cad_cfd_pipeline" class="btn secondary">View on GitHub</a></p>
+          </div>
+          <div class="freelance-card">
+            <h3>Agentic AI Solution for Automated CAD Generation</h3>
+            <p>An agentic AI system that uses LangChain orchestration and retrieval‑augmented models to automate CAD model generation and validate designs via CFD, thermal and structural analysis. Decision modules and an interactive UI enable rapid iteration during early product development.</p>
+            <p><a href="https://github.com/Deepak0kushwaha/agentic_cad_generation" class="btn secondary">View on GitHub</a></p>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Publications section -->
+    </section><!-- Publications section -->
     <section id="publications" class="section publications-section">
       <div class="container">
         <h2>Publications</h2>
