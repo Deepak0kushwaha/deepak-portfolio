@@ -264,14 +264,15 @@
           </div>
           <!-- Project 4 -->
           <div class="freelance-card">
-            <h3>Website Development Using AI‑Enabled “Vibe Coding” Tools</h3>
-            <p><strong>Summary:</strong> Built modern web interfaces leveraging AI‑assisted coding tools to accelerate front‑end development.</p>
-            <p><a href = "https://github.com/Deepak0kushwaha/ai_vibe_web" class="btn secondary"> <strong> Click here for Github Repository</strong></a></p>
+            <h3>AI powered book to quiz generative webapp</h3>
+            <p><strong>Summary:</strong> Book2Quiz is a browser-only React/Vite app that turns PDF textbooks into study questions and lets users practice or take timed tests.</p>
+            <p><a href = "https://deepak0kushwaha.github.io/Book2Quiz/" class="btn secondary"> <strong> Click here for Access Webapp</strong></a></p>
             <p><strong>Technical Approach / Stack:</strong></p>
             <ul>
-              <li>Tools: cursor.ai, windsurf (or equivalent AI‑assisted code generation/UX prototyping).</li>
-              <li>Rapid iteration: prompt‑driven UI/UX synthesis, component customization and deployment‑ready scaffolds.</li>
-              <li>Integration of branding/content with automated generation.</li>
+              <li> React + Vite + Base Web/Styletron, PDF handling and AI calls run in the browser.</li>
+              <li> pdfjs-dist loads PDFs and extracts text; if a page is sparse, render to canvas and run tesseract.js OCR with language hints (Hindi/English/Bilingual).</li>
+              <li> Assemble a prompt from user settings (pages, difficulty, type, count, language) and extracted text; call Gemini via fetch (model from VITE_GEMINI_*), expect JSON, strip code fences, JSON.parse with jsonrepair fallback, validate counts.</li>
+              <li> Study/Test modes with timers, submit/score, retry (shuffled options), reset/regenerate. MCQ/short-answer handling is controlled by parent state; options numbered for clarity.</li>
             </ul>
             <p><strong>Impact:</strong> Reduced traditional front‑end development time by leveraging AI tooling, delivering polished web experiences with minimal boilerplate.</p>
           </div>
