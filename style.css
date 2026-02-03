@@ -248,7 +248,7 @@ body {
 .hero-image img.fade-out {
   opacity: 0;
 }
-@media (max-width: 1440px) {
+@media (max-width: 768px) {
   .hero-section {
     flex-direction: column-reverse;
     text-align: center;
