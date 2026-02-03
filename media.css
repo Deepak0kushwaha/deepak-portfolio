@@ -18,7 +18,7 @@
   /* The carousel should not exceed 600px in width on large screens.
      On smaller screens it will shrink naturally while still
      maintaining the horizontal margins specified below. */
-  max-width: 600px;
+  max-width: 1200px;
   /* Provide 20px of space on the left and right so the container
      never touches the page edges.  Vertical margins are left at
      their default values. */
