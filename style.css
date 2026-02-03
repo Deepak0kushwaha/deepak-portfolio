@@ -124,7 +124,7 @@ body {
     right: 0;
     background-color: var(--bg-deeper);
     height: calc(100vh - 64px);
-    width: 200px;
+    width: 400px;
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem;
