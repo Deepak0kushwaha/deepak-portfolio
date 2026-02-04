@@ -23,7 +23,7 @@
      never touches the page edges.  Vertical margins are left at
      their default values. */
   margin-left: 20px;
-  margin-right: 20px;
+  margin-right: 60px;
   /* Use border-box to ensure any future padding or borders are
      included in the element’s width. */
   box-sizing: border-box;
