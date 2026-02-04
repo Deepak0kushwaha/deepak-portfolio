@@ -193,14 +193,16 @@
             <h3>Fault Diagnosis of Centrifugal Pump</h3>
 
             <p style="text-align: justify; text-justify: inter-word; margin: 0 0 12px 0;">
-              Conducted on the suggestion of <b>BARC (Bhabha Atomic Research Centre)</b>, this research focuses on
-              developing a <b>data-driven condition monitoring and fault diagnosis framework</b> for centrifugal pumps
-              under blockage-related faults (SB/DB/SDB) with multiple severity levels. The work spans the complete
-              pipeline—from experimental test-rig development and high-speed data acquisition to signal processing,
-              deep learning, and final deployment intent for predictive maintenance.
+              My research, carried out on the suggestion of BARC, focuses on developing a reliable, 
+              data-driven condition monitoring and fault diagnosis framework for centrifugal pumps under blockage-related operating faults.
+               I created controlled experimental conditions to reproduce suction blockage, discharge blockage, and their combined cases at multiple 
+               severity levels, captured high-resolution sensor data, and transformed these signals into meaningful diagnostic patterns using advanced
+                time–frequency analysis. Building on this experimental foundation, I implemented and improved deep-learning models—particularly a modified 
+                InceptionV3-based approach—to accurately classify pump health and fault severity, with the goal of enabling practical, industry-ready predictive 
+                maintenance for critical pumping systems.
             </p>
 
-            <ul style="margin: 0; padding-left: 18px; line-height: 1.5;">
+            <ul style="text-align: justify; text-justify: inter-word; margin: 0 0 12px 0;">
               <li><b>Test rig preparation & instrumentation:</b> Designed and assembled a controlled experimental setup measuring suction pressure, discharge pressure, and flow rate, integrated with HYDAC DAQ (HMG 4000) for reliable high-speed acquisition.</li>
 
               <li><b>DOE matrix formation (fault × severity × operating conditions):</b> Built a structured Design of Experiments covering 35 pump conditions — Healthy (1), SB (6 levels), DB (4 levels), and SDB (24 combinations).</li>
