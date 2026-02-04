@@ -59,23 +59,23 @@
         <h2>About Me</h2>
         <div class="about-grid">
           <div style="text-align: justify; text-justify: inter-word; line-height: 1.6; font-size: 16px;">
-            <p style="margin: 0 0 12px 0; padding-right: 50px; text-indent: 32px;"></p>
+            <p style="margin: 0 0 12px 0; text-indent: 32px;"></p>
               I started out as a mechanical engineer who loved understanding why machines behave the way they do—not just on paper, but in the real world. After completing my BE, I stepped into industry early, working on tooling and design where precision mattered every day: GD&T, manufacturability, and delivering designs that could actually be built. That foundation taught me discipline, practical thinking, and how to work with teams that depend on your output.
             </p>
-            <p style="margin: 0 0 12px 0; padding-right: 50px; text-indent: 32px;"></p>
+            <p style="margin: 0 0 12px 0; text-indent: 32px;"></p>
               Soon, my curiosity pulled me deeper into high-end engineering. At Gas Turbine Research Establishment (GTRE) under Defence Research and Development Organisation (DRDO), I got exposure to aircraft engine component design and optimization, where I learned how serious engineering problems are solved—through analysis, iterations, and strong cross-functional coordination. It was there I began to realize that simulation and data together can create a powerful edge.
             </p>  
               That realization pushed me toward research, and I joined IIT Indore for my MS (Research). During this phase, I didn’t just “study”—I built. I worked on centrifugal pump blockage fault diagnosis and used deep learning to make the system smarter, modifying InceptionV3 and achieving around 95% accuracy. Along the way, I also took responsibility beyond technical work—serving in student leadership roles that strengthened how I plan, communicate, and execute with people. This was the phase where I started turning deep learning concepts into real-world, measurable outcomes.
-            <p style="margin: 0 0 12px 0; padding-right: 50px; text-indent: 32px;"></p>
+            <p style="margin: 0 0 12px 0; text-indent: 32px;"></p>
               From there, my work naturally expanded into GenAI and Agentic AI, especially through freelancing projects where delivery and experimentation happen in real time. For example, I built an agentic workflow for audio processing and a Hinglish transcription pipeline where the system first cleans noisy locomotive crew audio using signal processing, then automatically detects speech segments using VAD, and finally runs ASR to generate Hindi-English transcripts—followed by LLM-based text normalization and speaker diarization merging. It wasn’t just about generating text; it was about building a reliable end-to-end system that could handle messy real-world inputs. More projects can be seen under the “Freelance Projects” section.
             </p>
-            <p style="margin: 0 0 12px 0; padding-right: 50px; text-indent: 32px;"></p>
+            <p style="margin: 0 0 12px 0; text-indent: 32px;"></p>
               Today, my journey has brought me to CRI - Havells India Limited as a Senior Engineer in AI/ML, where I’m building AI systems that connect CAD → CFD/CAE → predictions → decisions. My focus is physics-aware AI: creating automated pipelines and meta-models using GNNs, PointNet, and PINNs to accelerate thermal, flow, and modal analysis. This includes real industrial problems like LED thermal and light-performance prediction, and product-focused simulation work like fan aerodynamics and AC modal analysis. I enjoy turning heavy engineering workflows into deployable AI products—complete with CI/CD, monitoring, drift detection, and retraining. Alongside this, one of the most exciting parts of my work is the CAD Agent project, where I’m building an Agentic AI solution that can generate CAD designs from a simple text prompt. The goal is to make CAD creation feel conversational: the user describes what they want, the agent understands requirements, plans steps, retrieves relevant context, generates geometry through CAD tools, validates constraints, and iterates until the design matches intent. This project showcases my capability in building AI agents—not only prompting an LLM, but designing the full agent workflow: planning, tool-use, verification, logging, and continuous improvement.
             </p>
-            <p style="margin: 0 0 12px 0; padding-right: 50px; text-indent: 32px;"></p>
+            <p style="margin: 0 0 12px 0; text-indent: 32px;"></p>
               What really defines me is how I think and work. I carry an entrepreneurship mindset—I don’t stop at “model training.” I like building complete solutions: pipelines, automation, deployment, and real usability. I’m adaptive by nature, because my work sits at the intersection of mechanical engineering, CFD/CAE, and AI/ML. That interdisciplinarity has become my strength: I can talk to design teams, simulation teams, and AI teams—and translate requirements into working systems. And I genuinely enjoy collaborating with cross-functional teams because the best outcomes usually come when engineering, product, and IT move together.
             </p>
-            <p style="margin: 0 0 12px 0; padding-right: 50px; text-indent: 32px;"></p>
+            <p style="margin: 0 0 12px 0; text-indent: 32px;"></p>
               That’s my story so far—an engineer who grew from design fundamentals into research and now into production AI, focused on building practical, data-aware and agent-driven intelligence that speeds up real engineering decisions.
             </p>
           </div>
@@ -184,36 +184,44 @@
     </section>
 
     <!-- Projects section -->
-    <section id="projects" class="section projects-section">
+    <section id="Research Work" class="section projects-section">
       <div class="container">
         <h2>Projects</h2>
+
         <div class="project-grid">
           <div class="project-card">
             <h3>Fault Diagnosis of Centrifugal Pump</h3>
+
             <p style="text-align: justify; text-justify: inter-word; margin: 0 0 12px 0;">
-              Developed a signal‑processing framework using Empirical Mode
-              Decomposition and Deep Neural Networks to classify pump faults.
-              Achieved over 95% accuracy and published results in Advanced
-              Engineering Informatics.
+              Conducted on the suggestion of <b>BARC (Bhabha Atomic Research Centre)</b>, this research focuses on
+              developing a <b>data-driven condition monitoring and fault diagnosis framework</b> for centrifugal pumps
+              under blockage-related faults (SB/DB/SDB) with multiple severity levels. The work spans the complete
+              pipeline—from experimental test-rig development and high-speed data acquisition to signal processing,
+              deep learning, and final deployment intent for predictive maintenance.
             </p>
-          </div>
-          <div class="project-card">
-            <h3>Generative CAD with Agentic AI</h3>
-            <p style="text-align: justify; text-justify: inter-word; margin: 0 0 12px 0;">
-              Integrated Large Language Models with reinforcement learning to
-              autonomously generate CAD designs meeting flow and structural
-              constraints, significantly reducing the design iteration cycle.
-            </p>
-          </div>
-          <div class="project-card">
-            <h3>Pump Health Monitoring System</h3>
-            <p style="text-align: justify; text-justify: inter-word; margin: 0 0 12px 0;">
-              Designed a real‑time vibration analysis system for rotating
-              machinery, leveraging wavelet transforms and convolutional
-              networks to predict faults and scheduling maintenance.
-            </p>
+
+            <ul style="margin: 0; padding-left: 18px; line-height: 1.5;">
+              <li><b>Test rig preparation & instrumentation:</b> Designed and assembled a controlled experimental setup measuring suction pressure, discharge pressure, and flow rate, integrated with HYDAC DAQ (HMG 4000) for reliable high-speed acquisition.</li>
+
+              <li><b>DOE matrix formation (fault × severity × operating conditions):</b> Built a structured Design of Experiments covering 35 pump conditions — Healthy (1), SB (6 levels), DB (4 levels), and SDB (24 combinations).</li>
+
+              <li><b>Controlled fault simulation & repeatability:</b> Implemented blockage severities using butterfly-valve notch angles mapped to blocked-flow-area %, and enforced a steady-state window before logging to ensure consistent, repeatable trials.</li>
+
+              <li><b>High-quality data acquisition strategy:</b> Recorded sensor signals at 10 kHz for 60 seconds per condition to preserve fault-related frequency content and ensure fidelity for time–frequency analysis.</li>
+
+              <li><b>Signal processing & fault-signature analysis:</b> Applied Continuous Wavelet Transform (CWT) using a Morse wavelet (b=3, ω₀=60) to capture non-stationary time–frequency fault patterns and interpret pump dynamics (rotational harmonics, blade passing effects, etc.).</li>
+
+              <li><b>Feature/signal selection based on analysis:</b> Compared sensor behavior through CWT and established suction pressure as the most discriminative signal for blockage diagnosis versus discharge pressure/flow (higher separation, lower ambiguity).</li>
+
+              <li><b>Data preprocessing pipeline for deep learning:</b> Built a learning-ready dataset with stratified split (70:15:15) and scale (~11,725 train / 2,520 val / 2,520 test; 72 samples/class × 35 classes), along with meaningful augmentation (rotation/shift/shear/zoom/flip) to improve generalization.</li>
+
+              <li><b>ML/DL implementation (baseline model):</b> Implemented transfer-learning using InceptionV3 and achieved balanced baseline performance on unseen test data (~81.82% accuracy, precision/recall ~81.7–81.8%).</li>
+
+              <li><b>Modified InceptionV3 + tuning (final results & deployment intent):</b> Improved InceptionV3 by introducing ELU activations + optimized dropout, tuned via Hyperband (dropout1=0.3, dropout2=0.3, lr=1e-2, batch=16, factor=0.2, patience=5), achieving ~95.36% test accuracy (Precision 95.48%, Recall 95.36%, F1 95.42%) — supporting industry-ready predictive maintenance.</li>
+            </ul>
           </div>
         </div>
+
       </div>
     </section>
 
