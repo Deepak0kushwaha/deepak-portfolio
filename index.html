@@ -222,7 +222,9 @@
 
               <li><b>ML/DL implementation (baseline model):</b> Implemented transfer-learning using InceptionV3 and achieved balanced baseline performance on unseen test data (~81.82% accuracy, precision/recall ~81.7–81.8%).</li>
 
-              <li><b>Modified InceptionV3 + tuning (final results & deployment intent):</b> Improved InceptionV3 by introducing ELU activations + optimized dropout, tuned via Hyperband (dropout1=0.3, dropout2=0.3, lr=1e-2, batch=16, factor=0.2, patience=5), achieving ~95.36% test accuracy (Precision 95.48%, Recall 95.36%, F1 95.42%) — supporting industry-ready predictive maintenance.</li>
+              <li><b>Modified InceptionV3 + tuning (final results & deployment intent):</b> Improved architecture of InceptionV3 CNN model to make it more expressive 
+                by integrating a parallel network with ELU along with existing ReLU activation network & optimized dropout, tuned via Hyperband (dropout1=0.3, dropout2=0.3, lr=1e-2, batch=16, factor=0.2, patience=5), 
+                achieving ~95.36% test accuracy (Precision 95.48%, Recall 95.36%, F1 95.42%) — supporting industry-ready predictive maintenance.</li>
             </ul>
           </div>
         </div>
