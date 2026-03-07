@@ -174,7 +174,7 @@ body {
 }
 .hero-content {
   flex: 1;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 .hero-title {
   font-size: 2.5rem;
@@ -236,7 +236,7 @@ body {
 .hero-image {
   flex: 1;
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 .hero-image img {
   max-width: 100%;
