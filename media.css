@@ -22,14 +22,17 @@
   /* Provide 20px of space on the left and right so the container
      never touches the page edges.  Vertical margins are left at
      their default values. */
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 20px;
+  padding-right: 20px;
   /* Use border-box to ensure any future padding or borders are
      included in the element’s width. */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 0;
 }
 
 /* Window where media are shown.  It has a fixed height and
@@ -37,7 +40,9 @@
    bounds.  The background colour provides a subtle contrast */
 .media-window {
   width: 100%;
-  height: 600px;
+  aspect-ratio: 5 / 4;
+  min-height: 260px;
+  max-height: 70vh;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -66,6 +71,8 @@
   margin-top: 12px;
   display: flex;
   justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -147,4 +154,22 @@
 
 .slide-out-right {
   animation: slideOutRight 0.6s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .media-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .media-window {
+    aspect-ratio: 4 / 5;
+    min-height: 220px;
+  }
+
+  .media-prev-btn,
+  .media-next-btn {
+    flex: 1 1 140px;
+    max-width: 180px;
+  }
 }

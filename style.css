@@ -42,6 +42,12 @@ body {
   overflow-x: hidden;
 }
 
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
 /* Utility classes */
 .container {
   width: 90%;
@@ -158,6 +164,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
   min-height: 90vh;
   padding-top: 80px; /* account for fixed nav */
   padding-left: 5%;
@@ -174,6 +181,7 @@ body {
 }
 .hero-content {
   flex: 1;
+  min-width: 0;
   padding: 2rem 0;
 }
 .hero-title {
@@ -188,6 +196,7 @@ body {
 }
 .hero-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -233,8 +242,10 @@ body {
   background: var(--primary);
   color: #081a2c;
 }
-.hero-image {
+.hero-image,
+.media-container {
   flex: 1;
+  min-width: 0;
   text-align: center;
   padding: 2rem 0;
 }
@@ -251,12 +262,28 @@ body {
   opacity: 0;
 }
 @media (max-width: 768px) {
+  .nav-container {
+    width: 92%;
+  }
+  .logo {
+    max-width: calc(100% - 56px);
+    font-size: 1.1rem;
+  }
   .hero-section {
     flex-direction: column-reverse;
+    min-height: auto;
+    padding-top: 96px;
+    padding-bottom: 3rem;
     text-align: center;
   }
-  .hero-image {
+  .hero-content {
+    width: 100%;
     padding-top: 0;
+  }
+  .hero-image,
+  .media-container {
+    padding-top: 0;
+    width: 100%;
   }
   .hero-title {
     font-size: 2rem;
@@ -265,7 +292,18 @@ body {
     font-size: 1rem;
   }
   .hero-buttons {
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+  }
+  .hero-buttons .btn {
+    width: min(100%, 320px);
+    text-align: center;
+  }
+  .profile-photo {
+    width: min(100%, 280px);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -291,12 +329,17 @@ body {
   gap: 2rem;
   align-items: center;
 }
+.about-grid > :first-child {
+  flex: 2 1 420px;
+  min-width: 0;
+}
 .about-grid p {
   flex: 2;
   font-size: 1.05rem;
 }
 .highlights {
-  flex: 1;
+  flex: 1 1 260px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -321,18 +364,20 @@ body {
   color: var(--text-muted);
   text-transform: uppercase;
   margin-top: 0.5rem;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 @media (max-width: 768px) {
   .about-grid {
     flex-direction: column;
-    text-align: center;
   }
   .highlights {
-    flex-direction: row;
-    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .highlight {
-    flex: 1;
+    width: 100%;
   }
 }
 
@@ -344,6 +389,7 @@ body {
 }
 .skill-card {
   flex: 1 1 45%;
+  min-width: 0;
   background: var(--card-bg);
   padding: 2rem;
   border-radius: 8px;
@@ -402,6 +448,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 12px var(--shadow);
   border: 1px solid var(--border-colour);
+  overflow-wrap: anywhere;
 }
 .timeline-content h3 {
   color: var(--secondary);
@@ -428,6 +475,7 @@ body {
 }
 .project-card {
   flex: 1 1 30%;
+  min-width: 0;
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 8px;
@@ -467,6 +515,7 @@ body {
   border: 1px solid var(--border-colour);
   box-shadow: 0 4px 12px var(--shadow);
   margin-bottom: 1.5rem;
+  overflow-wrap: anywhere;
 }
 .freelance-card h3 {
   color: var(--secondary);
@@ -496,6 +545,7 @@ body {
   color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 .publication-list li {
   margin-bottom: 1rem;
@@ -516,6 +566,7 @@ body {
   color: var(--primary);
   text-decoration: none;
   transition: color 0.3s;
+  overflow-wrap: anywhere;
 }
 .contact-info a:hover {
   color: var(--secondary);
@@ -529,9 +580,38 @@ body {
   color: var(--text-muted);
   border-top: 1px solid var(--border-colour);
 }
+.footer img {
+  max-width: 100%;
+  height: auto;
+}
 /* Fade-out class for hero image slider */
 .fade-out {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 92%;
+  }
+  .section {
+    padding: 64px 0;
+  }
+  .section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .timeline {
+    padding-left: 28px;
+  }
+  .timeline::before {
+    left: 12px;
+  }
+  .timeline-dot {
+    left: -14px;
+  }
+  .timeline-content {
+    padding: 1.25rem;
+  }
 }
 
